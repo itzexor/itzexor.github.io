@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="Cinnamon Tutorials" link="index.html" author="" name="cinnamon-tutorials" version="2" language="c" online="http://developer.linuxmint.com/reference/git/cinnamon-tutorials/">
+  <chapters>
+    <sub name="Documentation" link="documentation.html">
+      <sub name="Using documentation" link="using-documentation.html"/>
+      <sub name="Writing documentation in source" link="documenting-source.html"/>
+      <sub name="Writing tutorials" link="documenting-tutorial.html"/>
+    </sub>
+    <sub name="Building Cinnamon" link="building.html">
+      <sub name="Debian-based systems" link="building.html#debian-based">
+        <sub name="Add APT sources repositories" link="building.html#id-1.3.2.2"/>
+        <sub name="Get build dependencies" link="building.html#id-1.3.2.3"/>
+        <sub name="Compile and install the stack" link="building.html#id-1.3.2.4"/>
+        <sub name="Optional: Compiling from stable branch" link="building.html#id-1.3.2.5"/>
+      </sub>
+    </sub>
+    <sub name="Cjs" link="cjs.html">
+      <sub name="The Importer" link="importer.html"/>
+    </sub>
+    <sub name="Extension system" link="extension-system.html">
+      <sub name="Writing applets" link="write-applet.html"/>
+      <sub name="Supporting multiple versions" link="xlet-versioning.html"/>
+      <sub name="Translating applets" link="xlet-translating.html"/>
+      <sub name="Applet, desklet and extension settings" link="xlet-settings.html"/>
+      <sub name="Applet, desklet and extension settings reference" link="xlet-settings-ref.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="enum" name="enum StButtonMask" link="using-documentation.html#id-1.2.2.5.8.3.1"/>
+    <keyword type="constant" name="ST_BUTTON_ONE" link="using-documentation.html#id-1.2.2.5.8.3.1.4.2.1.4.1.1.1"/>
+    <keyword type="constant" name="ST_BUTTON_TWO" link="using-documentation.html#id-1.2.2.5.8.3.1.4.2.1.4.2.1.1"/>
+    <keyword type="constant" name="ST_BUTTON_THREE" link="using-documentation.html#id-1.2.2.5.8.3.1.4.2.1.4.3.1.1"/>
+  </functions>
+</book>
