@@ -1,29 +1,6 @@
-/* latin */
-@font-face {
-  font-family: 'Cantarell';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Cantarell'),local('Cantarell Regular'), local('Cantarell-Regular'), url(https://fonts.gstatic.com/s/cantarell/v6/V86VyqXbc09Sss3BPsMj11tXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-*{box-sizing: border-box;}
 body
 {
-  font-family: Cantarell,serif;
-  margin-top: 0px;
-  line-height: 170%;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-}
-code{
-font-style: italic;
-background-color:#f4f4f4;
-padding: 2px;
-font-weight: bold;
-font-family:consolas,"Liberation Mono",Courier,"courier new",UbuntuMono,monospace;
-font-size:100%;
-white-space:pre;
-overflow:auto;
+  font-family: cantarell, sans-serif;
 }
 .synopsis, .classsynopsis
 {
@@ -33,7 +10,8 @@ overflow:auto;
   border: solid 1px rgb(238, 238, 236);
   padding: 0.5em;
 }
-.programlisting {
+.programlisting
+{
   /* tango:sky blue 0/1 */
   /* fallback for no rgba support */
   background: #e6f3ff;
@@ -50,6 +28,10 @@ overflow:auto;
 .variablelist td:first-child
 {
   vertical-align: top;
+}
+
+span.nowrap {
+  white-space: nowrap;
 }
 
 div.gallery-float
@@ -86,7 +68,10 @@ div.informaltable table
   border: none;
 }
 
-div.informaltable table td, div.informaltable table th {vertical-align: top;}
+div.informaltable table td, div.informaltable table th
+{
+  vertical-align: top;
+}
 
 .function_type,
 .variable_type,
@@ -319,21 +304,17 @@ acronym,abbr
 .listing_code .programlisting .normal a,
 .listing_code .programlisting .number,
 .listing_code .programlisting .cbracket,
-.listing_code .programlisting .symbol { color: #3d3e3b; }
-
+.listing_code .programlisting .symbol     { color: #555753; }
 .listing_code .programlisting .comment,
-.listing_code .programlisting .linenum { color: #41b805; }
-
+.listing_code .programlisting .linenum    { color: #babdb6; } /* tango: aluminium 3 */
 .listing_code .programlisting .function,
 .listing_code .programlisting .function a,
-.listing_code .programlisting .preproc { color: #2d68be; }
-
-.listing_code .programlisting .string { color: #ad4ca3; }
-
+.listing_code .programlisting .preproc    { color: #204a87; } /* tango: sky blue 3  */
+.listing_code .programlisting .string     { color: #ad7fa8; } /* tango: plum */
 .listing_code .programlisting .keyword,
 .listing_code .programlisting .usertype,
 .listing_code .programlisting .type,
-.listing_code .programlisting .type a { color: #d04213; font-weight: bold; }
+.listing_code .programlisting .type a     { color: #4e9a06; } /* tango: chameleon 3  */
 
 .listing_frame {
   /* tango:sky blue 1 */
@@ -385,11 +366,19 @@ acronym,abbr
     top:-5em;
   }
   /* this seems to be a bug in the xsl style sheets when generating indexes */
-  div.index div.index {top: 0em;}
+  div.index div.index
+  {
+    top: 0em;
+  }
   /* make space for the fixed navigation bar and add space at the bottom so that
    * link targets appear somewhat close to top
    */
-  body {max-width: 60em;}
+  body
+  {
+    padding-top: 2.5em;
+    padding-bottom: 500px;
+    max-width: 60em;
+  }
   p
   {
     max-width: 60em;
@@ -397,7 +386,15 @@ acronym,abbr
   /* style and size the navigation bar */
   table.navigation#top
   {
-    margin-bottom: 10px;
+    position: fixed;
+    background: #e2e2e2;
+    border-bottom: solid 1px #babdb6;
+    border-spacing: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: 10;
   }
   table.navigation#top td
   {
@@ -435,83 +432,52 @@ acronym,abbr
 }
 @media screen and (min-width: 60em) {
   /* screen larger than 60em */
-  body { margin: auto;}
+  body { margin: auto; }
 }
 @media screen and (max-width: 60em) {
   /* screen less than 60em */
-#nav_hierarchy,
-#nav_interfaces,
-#nav_prerequisites,
-#nav_derived_interfaces,
-#nav_implementations,
-#nav_child_properties,
-#nav_style_properties,
-#nav_index,
-#nav_glossary { display: none; }
-.gallery_image,
-.property_flags,
-.signal_flags,
-.parameter_annotations,
-.enum_member_annotations,
-.struct_member_annotations,
-.union_member_annotations { display: none; }
-
-/* now that a column is hidden, optimize space */
-col.parameters_name,
-col.parameters_description,
-col.struct_members_name,
-col.struct_members_description,
-col.enum_members_name,
-col.enum_members_description,
-col.union_members_name,
-col.union_members_description { width: auto; }
-.listing_lines { display: none; }
+  #nav_hierarchy { display: none; }
+  #nav_interfaces { display: none; }
+  #nav_prerequisites { display: none; }
+  #nav_derived_interfaces { display: none; }
+  #nav_implementations { display: none; }
+  #nav_child_properties { display: none; }
+  #nav_style_properties { display: none; }
+  #nav_index { display: none; }
+  #nav_glossary { display: none; }
+  .gallery_image { display: none; }
+  .property_flags { display: none; }
+  .signal_flags { display: none; }
+  .parameter_annotations { display: none; }
+  .enum_member_annotations { display: none; }
+  .struct_member_annotations { display: none; }
+  .union_member_annotations { display: none; }
+  /* now that a column is hidden, optimize space */
+  col.parameters_name { width: auto; }
+  col.parameters_description { width: auto; }
+  col.struct_members_name { width: auto; }
+  col.struct_members_description { width: auto; }
+  col.enum_members_name { width: auto; }
+  col.enum_members_description { width: auto; }
+  col.union_members_name { width: auto; }
+  col.union_members_description { width: auto; }
+  .listing_lines { display: none; }
 }
 @media print {
-table.navigation {
-visibility: collapse;
-display: none;
-}
-div.titlepage table.navigation {
-visibility: visible;
-display: table;
-background: #e2e2e2;
-border: solid 1px #babdb6;
-height: 3em;
-}
-}
-
-/* General styling */
-h1 {
-  padding-bottom: 0.1em;
-}
-
-#header {
-  display: table;
-  padding: 0px;
-  border-bottom: 1px solid #d3d7cf;
+  table.navigation {
+    visibility: collapse;
+    display: none;
+  }
+  div.titlepage table.navigation {
+    visibility: visible;
+    display: table;
+    background: #e2e2e2;
+    border: solid 1px #babdb6;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
+    left: 0;
+    height: 3em;
+  }
 }
 
-#links {
-  font-size: 110%;
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center;
-  width: 100%;
-}
-
-#header a {
-  padding: 4px 10px;
-  margin: 0px 10px;
-  color: black;
-  font-weight: bold;
-}
-
-#header a:hover, #header a.current:hover {
-  text-decoration: none;
-  border-bottom: 2px solid black;
-}
-
-#header a.current {
-  border-bottom: 2px solid #d3d7cf;
-}
